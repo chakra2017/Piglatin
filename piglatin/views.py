@@ -1,0 +1,24 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')
+
+def translate(request):
+    org = request.GET['originaltext'].lower()
+    translation = ""
+    for word in org.split():
+        if word[0] in ['a','e','i','o','u']:
+            #vowel
+            translation += word
+            translation += 'yay  '
+        else:
+            #consonant
+            translation += word[1:]
+            translation += word[0]
+            translation += 'ay  '
+
+    return render(request, 'translate.html', {'original':org,'translation': translation})
+
+def about(request):
+    return render(request, 'about.html')

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><b>PIG LATIN TRANSLATOR!</b></h1>
+    <p>HEY THIS IS HTML FILE</p>
+    <form action="{% url 'translate' %}">
+      <input type="text" name="originaltext" value="" /><br><br>
+      <input type="submit"value="translate!" />
+    </form>
+    <br><br>
+    <a href="{% url 'about' %}">About</a>
+  </body>
+</html>
